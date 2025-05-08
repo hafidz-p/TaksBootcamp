@@ -1,26 +1,32 @@
 function getData(e) {
     e.preventDefault();
-    console.log("getData function triggered"); // Debugging log
 
-    let name = document.getElementById("name").value
-    let email = document.getElementById("email").value
-    let phone = document.getElementById("phone").value
-    let message = document.getElementById("message").value
-    let subject = document.getElementById("subject").value
+    // Get form values
+    const projectName = document.getElementById("projectName").value;
+    const dateStart = document.getElementById("dateStart").value;
+    const dateEnd = document.getElementById("dateEnd").value;
+    const description = document.getElementById("message").value;
 
-    console.log(`Hello my name is ${name} ,my email is ${email} , my phone number is ${phone} and my message is ${message}. Subject: ${subject}` );
+    // Create a new card
+    const card = `
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">${projectName}</h5>
+                    <p class="card-text"><strong>Start Date:</strong> ${dateStart}</p>
+                    <p class="card-text"><strong>End Date:</strong> ${dateEnd}</p>
+                    <p class="card-text"><strong>Description:</strong> ${description}</p>
+                </div>
+            </div>
+        </div>
+    `;
 
-    // alert()
-    // changeElement()
+    // Append the card to the project list
+    document.getElementById("projectList").insertAdjacentHTML("beforeend", card);
+
+    // Clear the form
+    document.querySelector("form").reset();
 }
-
-// function selectSubject(value) {
-//     // Update the visible dropdown text
-//     document.getElementById('selected-subject').innerText = value;
-
-//     // Update the hidden input value
-//     document.getElementById('subject').value = value;
-// }
 
 function selectSubject(value) {
     const subjectElement = document.getElementById('selected-subject');
@@ -29,3 +35,19 @@ function selectSubject(value) {
     subjectElement.classList.remove('text-secondary');
     document.getElementById('subject').value = value;
 }
+
+$(document).ready(function () {
+    // Initialize Date Start picker
+    $('#datepicker input').datepicker({
+        format: 'mm/dd/yyyy', // Adjust the format as needed
+        autoclose: true,      // Close the picker after selecting a date
+        todayHighlight: true  // Highlight today's date
+    });
+
+    // Initialize Date End picker
+    $('#datepicker2 input').datepicker({
+        format: 'mm/dd/yyyy', // Adjust the format as needed
+        autoclose: true,      // Close the picker after selecting a date
+        todayHighlight: true  // Highlight today's date
+    });
+});
