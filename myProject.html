@@ -73,6 +73,26 @@
                     <label for="description" class="form-label">Description</label>
                     <textarea class="form-control" id="message" placeholder="Enter description" name="description" rows="5"></textarea>
                 </div>
+                <div class ="mb-3 w-50 mx-auto row">
+                    <label for="technologies" class="form-label">Technologies</label>
+                    <br>
+                    <div class="form-check col-6 small-text">
+                        <input class="form-check-input" type="checkbox" id="technologies1" value="Node Js" />
+                        <label class="form-check-label" for="technologies">Node Js</label>
+                    </div>
+                    <div class="form-check col-6 small-text">
+                        <input class="form-check-input" type="checkbox" id="technologies2" value="React Js" />
+                        <label class="form-check-label" for="technologies">React Js</label>
+                    </div>
+                    <div class="form-check col-6 small-text">
+                        <input class="form-check-input" type="checkbox" id="technologies3" value="Next Js" />
+                        <label class="form-check-label" for="technologies">Next Js</label>
+                    </div>
+                    <div class="form-check col-6 small-text">
+                        <input class="form-check-input" type="checkbox" id="technologies4" value="Typescript" />
+                        <label class="form-check-label" for="technologies">Typescript</label>
+                    </div>
+                </div>
                 <div class="mb-3 w-50 mx-auto">
                     <label for="formFile" class="form-label">Upload Image</label>
                     <input class="form-control" type="file" id="formFile">
@@ -82,9 +102,9 @@
                 </div>
             </form>
         </div>
-        <div class="container mt-5 bg-white">
-            <h1 class="text-center fw-bold">My Projects</h1>
-            <div class="row" id="projectList"></div>
+        <div class="container bg-white w-100 mx-n1">
+            <h1 class="text-center fw-bold py-3">My Projects</h1>
+            <div class="row m-1" id="projectList"></div>
         </div>
     </main>
 
