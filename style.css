@@ -67,3 +67,11 @@ button.dropdown-toggle .caret {
 #projectList {
     margin-top: 20px;
 }
+
+
+.tech-icon {
+    width: 30px; /* Set a fixed width */
+    height: 30px; /* Set a fixed height */
+    object-fit: contain; /* Ensure the image fits within the dimensions */
+    margin: 0 5px; /* Add spacing between icons */
+}
